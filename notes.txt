@@ -1,0 +1,69 @@
+*OS module
+    - Operating system and server.
+    
+    *Methods
+
+        os.userInfo()
+        //info about current user
+        
+        os.uptime()
+        //returns system uptime in seconds.
+
+        os.freemem()
+        //return available system memory
+
+*Path module
+
+    *Methods    
+
+        path.resolve()
+        //Gives absolute path
+        //Ex: path.resolve(__dirname, "myfolder", "text.txt")
+
+        path.join()
+        //Joining path
+        //Ex: path.join("\document", "txt.txt")
+
+*fs module (file system)
+
+    *Methods
+
+       Synchronous(
+            readFileSync(./path, encoding)
+            //read fie
+
+            writeFileSync('path', 'utf8')
+            //writeFile
+            
+       )
+       Asynchronous(
+           readFile('path','utf8',callBackFunction)
+           //readFile
+
+           writeFile('path','whatToWrite',callBackFunction)
+           //write file
+       )
+
+       Async vs Sync ?
+        - Yung async di niya aantayin matapos yung callBackFunction ng isang function, tuloy tuloy lang line by line. Mas maganda to kasi it will not take too much time to finish, unlike kay sync.
+
+*Http module
+    
+    const http = require('http');
+    //initializing http object
+
+    const myServer = http.createServer((req, res) => {
+        res.write("string");
+        //write something to document
+
+        res.end();
+        //end the server
+
+        *req is a giant object
+            *Methods    
+                - .url: return the url
+    })
+    //creating the actual server
+
+    myServer.listen(port);
+    //opening the port
